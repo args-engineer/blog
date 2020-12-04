@@ -148,7 +148,6 @@ const SiteNavLeft = styled.div`
   padding: 10px 0 80px;
   font-weight: 500;
   letter-spacing: 0.2px;
-  text-transform: uppercase;
   white-space: nowrap;
 
   -ms-overflow-scrolling: touch;

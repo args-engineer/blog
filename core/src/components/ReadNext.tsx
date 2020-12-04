@@ -67,10 +67,6 @@ const ReadNextAside = styled.aside`
   .post-card:after {
     display: none;
   }
-  .post-card-primary-tag {
-    color: #fff;
-    opacity: 0.6;
-  }
   .post-card-title {
     color: #fff;
     opacity: 0.8;

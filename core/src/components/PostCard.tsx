@@ -45,9 +45,9 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
         <Link className="post-card-content-link" css={PostCardContentLink} to={post.fields.slug}>
           <PostCardHeader className="post-card-header">
             {post.frontmatter.tags && (
-              <PostCardPrimaryTag className="post-card-primary-tag">
-                {post.frontmatter.tags[0]}
-              </PostCardPrimaryTag>
+              <div style={{display: 'flex'}}>
+                {post.frontmatter.tags.map(tag => <PostCardPrimaryTag>{tag}</PostCardPrimaryTag>)}
+              </div>
             )}
             <PostCardTitle className="post-card-title">{post.frontmatter.title}</PostCardTitle>
           </PostCardHeader>
@@ -175,7 +175,13 @@ const PostCardPrimaryTag = styled.div`
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.2px;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  background-color: #25282e;
+  padding: 1px 4px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  margin-right: 4px;
 `;
 
 const PostCardTitle = styled.h2`
@@ -214,7 +220,6 @@ const PostCardBylineContent = styled.div`
   line-height: 1.4em;
   font-weight: 400;
   letter-spacing: 0.2px;
-  text-transform: uppercase;
 
   span {
     margin: 0;

@@ -108,7 +108,6 @@ const ReadNextCardHeaderTitle = styled.h3`
   line-height: 1em;
   font-weight: 300;
   letter-spacing: 0.4px;
-  text-transform: uppercase;
 
   a {
     color: #fff;

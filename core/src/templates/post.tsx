@@ -155,14 +155,13 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
         </header>
         <main id="site-main" className="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
-            {/* TODO: no-image css tag? */}
             <article css={[PostFull, !post.frontmatter.image && NoImage]}>
               <PostFullHeader className="post-full-header">
                 <PostFullTags className="post-full-tags">
-                  {post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
-                    <Link to={`/tags/${_.kebabCase(post.frontmatter.tags[0])}/`}>
-                      {post.frontmatter.tags[0]}
-                    </Link>
+                  {post.frontmatter.tags?.length > 0 && (
+                    <div style={{display: 'flex'}}>
+                      {post.frontmatter.tags.map(tag => <PostLinkTags to={`/tags/${_.kebabCase(tag)}/`}>{tag}</PostLinkTags>)}
+                    </div>
                   )}
                 </PostFullTags>
                 <PostFullTitle className="post-full-title">{post.frontmatter.title}</PostFullTitle>
@@ -270,7 +269,16 @@ const PostFullTags = styled.section`
   font-size: 1.3rem;
   line-height: 1.4em;
   font-weight: 600;
-  text-transform: uppercase;
+`;
+
+const PostLinkTags = styled(props => <Link {...props} />)`
+  display: flex;
+  align-items: center;
+  background-color: #25282e;
+  padding: 1px 4px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  margin-right: 4px;
 `;
 
 const PostFullCustomExcerpt = styled.p`
@@ -318,7 +326,6 @@ const PostFullByline = styled.div`
     font-size: 1.2rem;
     line-height: 1.2em;
     letter-spacing: 0.2px;
-    text-transform: uppercase;
   }
 
   .post-full-byline-meta h4 {
