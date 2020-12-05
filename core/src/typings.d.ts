@@ -25,3 +25,8 @@ declare module 'rehype-react' {
   }
   export default RehypeReact;
 }
+
+declare module 'react-inview-monitor' {
+  const InViewMonitor: any;
+  export = InViewMonitor;
+}

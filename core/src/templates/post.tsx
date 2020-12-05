@@ -10,6 +10,7 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 import { Footer } from '../components/Footer';
+import { Main } from '../components/Main';
 import SiteNav, { SiteNavMain } from '../components/header/SiteNav';
 import PostContent from '../components/PostContent';
 import { ReadNext } from '../components/ReadNext';
@@ -153,7 +154,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
             </div>
           </div>
         </header>
-        <main id="site-main" className="site-main" css={[SiteMain, outer]}>
+        <Main className="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
             <article css={[PostFull, !post.frontmatter.image && NoImage]}>
               <PostFullHeader className="post-full-header">
@@ -193,7 +194,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
               <PostContent htmlAst={post.htmlAst} />
             </article>
           </div>
-        </main>
+        </Main>
 
         <ReadNext
           currentPageSlug={location.pathname}

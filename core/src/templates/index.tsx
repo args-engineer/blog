@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 import { css } from '@emotion/core';
 
 import { Footer } from '../components/Footer';
+import { Main } from '../components/Main';
 import SiteNav from '../components/header/SiteNav';
 import Pagination from '../components/Pagination';
 import { PostCard } from '../components/PostCard';
@@ -114,7 +115,7 @@ const IndexPage: React.FC<IndexProps> = props => {
             </SiteHeaderContent>
           </div>
         </div>
-        <main id="site-main" css={[SiteMain, outer]}>
+        <Main css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
             <div css={[PostFeed]}>
               {props.data.allMarkdownRemark.edges.map((post, index) => {
@@ -128,7 +129,7 @@ const IndexPage: React.FC<IndexProps> = props => {
               })}
             </div>
           </div>
-        </main>
+        </Main>
         {props.children}
         {props.pageContext.numPages > 1 && (
           <Pagination

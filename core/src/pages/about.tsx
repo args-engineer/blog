@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import { css } from '@emotion/core';
 
 import { Footer } from '../components/Footer';
+import { Main } from '../components/Main';
 import SiteNav from '../components/header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
@@ -47,7 +48,7 @@ const About: React.FC = () => (
           </div>
         </div>
       </header>
-      <main id="site-main" className="site-main" css={[SiteMain, outer]}>
+      <Main className="site-main" css={[SiteMain, outer]}>
         <div css={inner}>
           <article className="post page" css={[PostFull, NoImage]}>
             <PostFullHeader className="post-full-header">
@@ -66,7 +67,7 @@ const About: React.FC = () => (
             </PostFullContent>
           </article>
         </div>
-      </main>
+      </Main>
       <Footer />
     </Wrapper>
   </IndexLayout>

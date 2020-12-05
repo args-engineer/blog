@@ -4,6 +4,7 @@ import React from 'react';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
+import { Main } from '../components/Main';
 import SiteNav from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
 import { Wrapper } from '../components/Wrapper';
@@ -36,7 +37,7 @@ const NotFoundPage: React.FC<NotFoundTemplateProps> = props => {
             </div>
           </div>
         </header>
-        <main id="site-main" css={[outer, ErrorContent]} className="error-content">
+        <Main css={[outer, ErrorContent]} className="error-content">
           <div css={[inner]}>
             <section style={{ textAlign: 'center' }}>
               <ErrorCode>404</ErrorCode>
@@ -52,7 +53,7 @@ const NotFoundPage: React.FC<NotFoundTemplateProps> = props => {
               ))}
             </div>
           </div>
-        </main>
+        </Main>
       </Wrapper>
     </IndexLayout>
   );

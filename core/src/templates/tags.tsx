@@ -3,6 +3,7 @@ import React from 'react';
 import { FluidObject } from 'gatsby-image';
 
 import { Footer } from '../components/Footer';
+import { Main } from '../components/Main';
 import SiteNav from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
 import { Wrapper } from '../components/Wrapper';
@@ -111,7 +112,7 @@ const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
             </SiteHeaderContent>
           </ResponsiveHeaderBackground>
         </header>
-        <main id="site-main" css={[SiteMain, outer]}>
+        <Main css={[SiteMain, outer]}>
           <div css={inner}>
             <div css={[PostFeed]}>
               {edges.map(({ node }) => (
@@ -119,7 +120,7 @@ const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
               ))}
             </div>
           </div>
-        </main>
+        </Main>
         <Footer />
       </Wrapper>
     </IndexLayout>
