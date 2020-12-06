@@ -19,6 +19,7 @@ import {
 } from '../styles/shared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
 import { colors } from '../styles/colors';
+import config from '../website-config';
 
 const PageTemplate = css`
   .site-main {
@@ -34,11 +35,10 @@ const PageTemplate = css`
     }
   }
 `;
-const title = "当サイトについて";
 const About: React.FC = () => (
   <IndexLayout>
     <Helmet>
-      <title>{title}</title>
+      <title>{`${config.aboutPageTitle} - ${config.title}`}</title>
     </Helmet>
     <Wrapper css={PageTemplate}>
       <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
@@ -52,7 +52,7 @@ const About: React.FC = () => (
         <div css={inner}>
           <article className="post page" css={[PostFull, NoImage]}>
             <PostFullHeader className="post-full-header">
-              <PostFullTitle className="post-full-title">{title}</PostFullTitle>
+              <PostFullTitle className="post-full-title">{config.aboutPageTitle}</PostFullTitle>
             </PostFullHeader>
 
             <PostFullContent className="post-full-content">

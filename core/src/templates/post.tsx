@@ -94,6 +94,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
     height = String(Number(width) / post.frontmatter.image.childImageSharp.fluid.aspectRatio);
   }
 
+  const postTitle = `${post.frontmatter.title} - ${config.title}`;
   const date = new Date(post.frontmatter.date);
   const datetime = format(date, 'yyyy-MM-dd');
   const displayDatetime = format(date, 'yyyy-MM-dd');
@@ -102,12 +103,12 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
     <IndexLayout className="post-template">
       <Helmet>
         <html lang={config.lang} />
-        <title>{post.frontmatter.title}</title>
+        <title>{postTitle}</title>
 
         <meta name="description" content={post.frontmatter.excerpt || post.excerpt} />
         <meta property="og:site_name" content={config.title} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={post.frontmatter.title} />
+        <meta property="og:title" content={postTitle} />
         <meta property="og:description" content={post.frontmatter.excerpt || post.excerpt} />
         <meta property="og:url" content={config.siteUrl + location.pathname} />
         {post.frontmatter.image?.childImageSharp && (
@@ -122,7 +123,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
         )}
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.frontmatter.title} />
+        <meta name="twitter:title" content={postTitle} />
         <meta name="twitter:description" content={post.frontmatter.excerpt || post.excerpt} />
         <meta name="twitter:url" content={config.siteUrl + location.pathname} />
         {post.frontmatter.image?.childImageSharp && (
@@ -187,7 +188,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
                   <Img
                     style={{ height: '100%' }}
                     fluid={post.frontmatter.image.childImageSharp.fluid}
-                    alt={post.frontmatter.title}
+                    alt={postTitle}
                   />
                 </PostFullImage>
               )}

@@ -56,6 +56,7 @@ interface TagTemplateProps {
 
 const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
   const tag = pageContext.tag ? pageContext.tag : '';
+  const PageTitle = `${tag} - ${config.title}`;
   const { edges, totalCount } = data.allMarkdownRemark;
   const tagData = data.allTagYaml.edges.find(
     n => n.node.id.toLowerCase() === tag.toLowerCase(),
@@ -66,15 +67,15 @@ const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
       <Helmet>
         <html lang={config.lang} />
         <title>
-          {tag} - {config.title}
+          {PageTitle}
         </title>
         <meta name="description" content={tagData?.node ? tagData.node.description : ''} />
         <meta property="og:site_name" content={config.title} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={`${tag} - ${config.title}`} />
+        <meta property="og:title" content={PageTitle} />
         <meta property="og:url" content={config.siteUrl + location.pathname} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${tag} - ${config.title}`} />
+        <meta name="twitter:title" content={PageTitle} />
         <meta name="twitter:url" content={config.siteUrl + location.pathname} />
         {config.twitter && (
           <meta

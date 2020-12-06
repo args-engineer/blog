@@ -8,6 +8,7 @@ export interface WebsiteConfig {
   twitter?: string;
   github?: string;
   googleSiteVerification?: string;
+  aboutPageTitle: string;
 }
 
 const config: WebsiteConfig = {
@@ -20,6 +21,7 @@ const config: WebsiteConfig = {
   twitter: 'https://twitter.com/ArgsEngineer',
   github: 'https://github.com',
   googleSiteVerification: 'GoogleCode',
+  aboutPageTitle: '当サイトについて'
 };
 
 export default config;

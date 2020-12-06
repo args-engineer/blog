@@ -82,7 +82,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
                 <li role="menuitem">
                   <HeaderLinkTags to="/about">
                     <span className={"en"}>About / Author</span>
-                    <span className={"jp"}>当サイトについて</span>
+                    <span className={"jp"}>{config.aboutPageTitle}</span>
                   </HeaderLinkTags>
                 </li>
               </ul>
