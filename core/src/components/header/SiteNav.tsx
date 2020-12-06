@@ -80,7 +80,10 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
             <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
               <ul css={NavStyles} role="menu">
                 <li role="menuitem">
-                  <Link to="/about">About</Link>
+                  <HeaderLinkTags to="/about">
+                    <span className={"en"}>About / Author</span>
+                    <span className={"jp"}>当サイトについて</span>
+                  </HeaderLinkTags>
                 </li>
               </ul>
               {isPost && (
@@ -261,6 +264,35 @@ const HideNav = css`
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
+  }
+`;
+
+const HeaderLinkTags = styled(props => <Link {...props}></Link>)`
+  :hover {
+    -webkit-animation: zoom .3s;
+    animation: zoom .3s;
+  }
+  @-webkit-keyframes zoom {
+    50% {
+      -webkit-transform: scale(1.05);
+    }
+  }
+  @keyframes zoom {
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  span.en {
+    display: inline;
+  }
+  :hover span.en {
+    display: none;
+  }
+  span.jp {
+    display: none;
+  }
+  :hover span.jp {
+    display: inline;
   }
 `;
 
