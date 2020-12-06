@@ -434,7 +434,7 @@ const IndexLayout: React.FC<IndexProps> = props => {
 
           h1 {
             margin: 0 0 0.5em 0;
-            font-size: 5.5rem;
+            font-size: 3.5rem;
             font-weight: 600;
           }
           @media (max-width: 500px) {
