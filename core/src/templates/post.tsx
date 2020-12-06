@@ -285,7 +285,7 @@ const PostLinkTags = styled(props => <Link {...props} />)`
 const PostFullCustomExcerpt = styled.p`
   margin: 20px 0 0;
   color: var(--midgrey);
-  font-family: Georgia, serif;
+  font-family: 'Noto Serif JP', Georgia, serif;
   font-size: 2.3rem;
   line-height: 1.4em;
   font-weight: 300;
