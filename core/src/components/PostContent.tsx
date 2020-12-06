@@ -30,7 +30,7 @@ const PostContent: React.FC<PostContentProps> = ({ htmlAst }) => {
 export const PostFullContent = styled.section`
   position: relative;
   margin: 0 auto;
-  padding: 0 170px 6vw;
+  padding: 0 0px 6vw;
   min-height: 230px;
   font-family: 'Noto Serif JP', Georgia, serif;
   font-size: 2rem;
@@ -127,10 +127,10 @@ export const PostFullContent = styled.section`
   video {
     display: block;
     margin: 1.5em auto;
-    max-width: 1040px;
+    max-width: 1600px;
     height: auto;
   }
-  @media (max-width: 1040px) {
+  @media (max-width: 1600px) {
     img,
     video {
       width: 100%;
