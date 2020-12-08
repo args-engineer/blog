@@ -5,12 +5,12 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 import { Main } from '../components/Main';
-import SiteNav from '../components/header/SiteNav';
+import SiteNav, { SiteNavMain } from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import { colors } from '../styles/colors';
-import { inner, outer, PostFeed, SiteHeader, SiteNavMain } from '../styles/shared';
+import { inner, outer, PostFeed, SiteHeader } from '../styles/shared';
 import { PageContext } from '../templates/post';
 
 interface NotFoundTemplateProps {

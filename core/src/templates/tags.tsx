@@ -4,7 +4,7 @@ import { FluidObject } from 'gatsby-image';
 
 import { Footer } from '../components/Footer';
 import { Main } from '../components/Main';
-import SiteNav from '../components/header/SiteNav';
+import SiteNav, { SiteNavMain } from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
@@ -17,7 +17,6 @@ import {
   SiteHeaderContent,
   SiteMain,
   SiteTitle,
-  SiteNavMain,
   SiteArchiveHeader,
   ResponsiveHeaderBackground,
   SiteHeaderBackground,

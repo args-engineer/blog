@@ -1,11 +1,9 @@
 import { Link } from 'gatsby';
-import { darken } from 'polished';
 import React from 'react';
 
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
-import { colors } from '../../styles/colors';
 import { SocialLink } from '../../styles/shared';
 import config from '../../website-config';
 import { Twitter } from '../icons/twitter';
@@ -81,8 +79,8 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               <ul css={NavStyles} role="menu">
                 <li role="menuitem">
                   <HeaderLinkTags to="/about">
-                    <span className={"en"}>About / Author</span>
-                    <span className={"jp"}>{config.aboutPageTitle}</span>
+                    <span className={'en'}>About / Author</span>
+                    <span className={'jp'}>{config.aboutPageTitle}</span>
                   </HeaderLinkTags>
                 </li>
               </ul>
@@ -120,8 +118,18 @@ export const SiteNavMain = css`
   right: 0;
   left: 0;
   z-index: 1000;
-  /* background: color(var(--darkgrey) l(-5%)) */
-  background: ${darken('0.05', colors.darkgrey)};
+  background-image: url(${require('../../content/img/blog-cover.png')});
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.6);
+
+  ::after {
+    background-color: rgba(0, 0, 0, 0.3);
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
 
   @media (max-width: 700px) {
     padding-right: 0;
@@ -269,8 +277,8 @@ const HideNav = css`
 
 const HeaderLinkTags = styled(props => <Link {...props}></Link>)`
   :hover {
-    -webkit-animation: zoom .3s;
-    animation: zoom .3s;
+    -webkit-animation: zoom 0.3s;
+    animation: zoom 0.3s;
   }
   @-webkit-keyframes zoom {
     50% {

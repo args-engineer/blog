@@ -5,7 +5,7 @@ import { css } from '@emotion/core';
 
 import { Footer } from '../components/Footer';
 import { Main } from '../components/Main';
-import SiteNav from '../components/header/SiteNav';
+import SiteNav, { SiteNavMain } from '../components/header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
@@ -15,7 +15,6 @@ import {
   SiteArchiveHeader,
   SiteHeader,
   SiteMain,
-  SiteNavMain,
 } from '../styles/shared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
 import { colors } from '../styles/colors';
