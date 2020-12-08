@@ -62,10 +62,6 @@ export const SiteDescription = styled.h2`
   }
 `;
 
-export const Posts = css`
-  overflow-x: hidden;
-`;
-
 export const PostFeed = css`
   position: relative;
   display: flex;
@@ -154,7 +150,7 @@ export const SiteHeaderStyles = css`
 
   @media (prefers-color-scheme: dark) {
     :before {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.3);
     }
   }
 `;
@@ -214,7 +210,7 @@ export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string 
 
     @media (prefers-color-scheme: dark) {
       &:before {
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(0, 0, 0, 0.3);
       }
     }
   `}

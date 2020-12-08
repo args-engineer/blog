@@ -16,7 +16,6 @@ import {
   inner,
   outer,
   PostFeed,
-  Posts,
   SiteDescription,
   SiteHeader,
   SiteHeaderContent,
@@ -116,7 +115,7 @@ const IndexPage: React.FC<IndexProps> = props => {
           </div>
         </div>
         <Main css={[SiteMain, outer]}>
-          <div css={[inner, Posts]}>
+          <div css={inner}>
             <div css={[PostFeed]}>
               {props.data.allMarkdownRemark.edges.map((post, index) => {
                 // filter out drafts in production
@@ -200,6 +199,7 @@ const HomePosts = css`
       padding-bottom: 40px;
       min-height: 280px;
       border-top: 0;
+      padding: 0;
     }
 
     .post-card-large .post-card-title {
@@ -211,35 +211,15 @@ const HomePosts = css`
       margin-top: 0;
     }
 
-    .post-card-large .post-card-image-link {
-      position: relative;
-      flex: 1 1 auto;
-      margin-bottom: 0;
-      min-height: 380px;
-    }
-
     .post-card-large .post-card-image {
       position: absolute;
       width: 100%;
       height: 100%;
     }
 
-    .post-card-large .post-card-content {
-      flex: 0 1 361px;
-      justify-content: center;
-    }
-
     .post-card-large .post-card-title {
       margin-top: 0;
       font-size: 3.2rem;
-    }
-
-    .post-card-large .post-card-content-link {
-      padding: 0 0 0 40px;
-    }
-
-    .post-card-large .post-card-meta {
-      padding: 0 0 0 40px;
     }
 
     .post-card-large .post-card-excerpt p {
