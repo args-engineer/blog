@@ -1,5 +1,4 @@
 import { Link } from 'gatsby';
-import { setLightness } from 'polished';
 import React from 'react';
 import { css } from '@emotion/core';
 
@@ -13,12 +12,21 @@ export const Footer: React.FC = () => {
       <div css={[inner, SiteFooterContent]}>
         <section className="copyright" css={Copyright}>
           <Link to="/">{config.title}</Link> &copy; {new Date().getFullYear()}{' '}
-          <a href="/rss.xml" target="_blank" rel="noopener noreferrer"> | RSS</a>
+          <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
+            {' '}
+            | RSS
+          </a>
           {config.twitter && (
-            <a href={config.twitter} target="_blank" rel="noopener noreferrer"> | Twitter</a>
+            <a href={config.twitter} target="_blank" rel="noopener noreferrer">
+              {' '}
+              | Twitter
+            </a>
           )}
           {config.github && (
-            <a href={config.github} target="_blank" rel="noopener noreferrer"> | GitHub</a>
+            <a href={config.github} target="_blank" rel="noopener noreferrer">
+              {' '}
+              | GitHub
+            </a>
           )}
         </section>
       </div>
@@ -31,8 +39,9 @@ const SiteFooter = css`
   padding-top: 20px;
   padding-bottom: 60px;
   color: #fff;
-  background: ${setLightness('0.0015', colors.darkgrey)};
+  background: ${colors.darkmode};
   margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 `;
 
 const SiteFooterContent = css`
