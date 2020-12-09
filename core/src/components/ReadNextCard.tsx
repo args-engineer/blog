@@ -118,13 +118,13 @@ const ReadNextCardArticle = styled.article`
 const ReadNextCardHeaderTitle = styled.h3`
   margin: 0;
   color: rgba(255, 255, 255, 0.6);
-  font-size: 1.2rem;
+  font-size: 2.0rem;
   line-height: 1em;
   font-weight: 300;
   letter-spacing: 0.4px;
 
   a {
-    color: #fff;
+    color: ${colors.blue};
     font-weight: 500;
     text-decoration: none;
     opacity: 0.8;
@@ -175,7 +175,7 @@ const ReadNextCardContent = styled.div`
     line-height: 1.35em;
     font-weight: 600;
     display: block;
-    color: #fff;
+    color: ${colors.blue};
   }
 `;
 
