@@ -1,9 +1,10 @@
-import { graphql, Link } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import React from 'react';
 
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
+import { Footer } from '../components/Footer';
 import { Main } from '../components/Main';
 import SiteNav, { SiteNavMain } from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
@@ -39,12 +40,12 @@ const NotFoundPage: React.FC<NotFoundTemplateProps> = props => {
         </header>
         <Main css={[outer, ErrorContent]} className="error-content">
           <div css={[inner]}>
-            <section style={{ textAlign: 'center' }}>
-              <ErrorCode>404</ErrorCode>
-              <ErrorDescription>Page not found</ErrorDescription>
-              <Link css={ErrorLink} to="/">
-                Go to the front page →
-              </Link>
+            <section css={ErrorSection} onClick={() => navigate('/')}>
+              <ErrorCode>404 Page Not Found</ErrorCode>
+              <ErrorDescription>お探しのページは見つかりませんでした。</ErrorDescription>
+              <ErrorDescription>
+                アクセスしようとしたページは削除されたかURLが変更された可能性があります。
+              </ErrorDescription>
             </section>
 
             <div css={PostFeed} className="post-feed">
@@ -54,6 +55,7 @@ const NotFoundPage: React.FC<NotFoundTemplateProps> = props => {
             </div>
           </div>
         </Main>
+        <Footer />
       </Wrapper>
     </IndexLayout>
   );
@@ -87,8 +89,26 @@ export const pageQuery = graphql`
   }
 `;
 
+const ErrorSection = css`
+  border-radius: 10px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.12), 0 5px 30px 0 rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+  -webkit-transition: transform 0.7s;
+  transition: transform 0.7s;
+
+  /* PCのみ */
+  @media (min-width: 795px) and (min-height: 795px) {
+    :hover {
+      -webkit-transform: translateY(-3%);
+      transform: translateY(-3%);
+    }
+`;
+
 const ErrorContent = css`
-  padding: 14vw 4vw 6vw;
+  padding: 8vw 4vw 4vw;
 
   @media (max-width: 800px) {
     padding-top: 24vw;
@@ -97,23 +117,15 @@ const ErrorContent = css`
   @media (max-width: 500px) {
     padding-top: 28vw;
   }
-
-  @media (min-width: 940px) {
-    .post-card {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: none;
-    }
-  }
 `;
 
 const ErrorCode = styled.h1`
   margin: 0;
   /* color: var(--lightgrey); */
   color: ${colors.lightgrey};
-  font-size: 12vw;
+  font-size: 3vw;
   line-height: 1em;
-  letter-spacing: -5px;
+  padding: 30px;
   opacity: 0.75;
 
   @media (max-width: 800px) {
@@ -125,7 +137,7 @@ const ErrorDescription = styled.p`
   margin: 0;
   /* color: var(--midgrey); */
   color: ${colors.midgrey};
-  font-size: 3rem;
+  font-size: 2rem;
   line-height: 1.3em;
   font-weight: 400;
 
@@ -133,11 +145,6 @@ const ErrorDescription = styled.p`
     margin: 5px 0 0 0;
     font-size: 1.8rem;
   }
-`;
-
-const ErrorLink = css`
-  display: inline-block;
-  margin-top: 5px;
 `;
 
 export default NotFoundPage;
