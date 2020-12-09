@@ -95,9 +95,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
   }
 
   const postTitle = `${post.frontmatter.title} - ${config.title}`;
-  const date = new Date(post.frontmatter.date);
-  const datetime = format(date, 'yyyy-MM-dd');
-  const displayDatetime = format(date, 'yyyy-MM-dd');
+  const datetime = format(new Date(post.frontmatter.date), 'yyyy-MM-dd');
 
   return (
     <IndexLayout className="post-template">
@@ -161,8 +159,10 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
               <PostFullHeader className="post-full-header">
                 <PostFullTags className="post-full-tags">
                   {post.frontmatter.tags?.length > 0 && (
-                    <div style={{display: 'flex'}}>
-                      {post.frontmatter.tags.map(tag => <PostLinkTags to={`/tags/${_.kebabCase(tag)}/`}>{tag}</PostLinkTags>)}
+                    <div style={{ display: 'flex' }}>
+                      {post.frontmatter.tags.map(tag => (
+                        <PostLinkTags to={`/tags/${_.kebabCase(tag)}/`}>{tag}</PostLinkTags>
+                      ))}
                     </div>
                   )}
                 </PostFullTags>
@@ -175,7 +175,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
                     <section className="post-full-byline-meta">
                       <div className="byline-meta-content">
                         <time className="byline-meta-date" dateTime={datetime}>
-                          {displayDatetime}
+                          {datetime}
                         </time>
                       </div>
                     </section>
@@ -226,7 +226,11 @@ const PostTemplate = css`
 `;
 
 export const PostFull = css`
+  border-radius: 10px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.12), 0 5px 30px 0 rgba(0, 0, 0, 0.22);
+  padding: 20px;
   position: relative;
+  margin: 100px 0 0 0;
   z-index: 50;
 `;
 
@@ -399,7 +403,7 @@ const PostFullImage = styled.figure`
     height: 400px;
   }
   @media (max-width: 500px) {
-    margin-bottom: 4vw;
+    margin: 0 0 4vw;
     height: 350px;
   }
 `;
