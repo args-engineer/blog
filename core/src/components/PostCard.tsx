@@ -17,9 +17,7 @@ export interface PostCardProps {
 }
 
 export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
-  const date = new Date(post.frontmatter.date);
-  const datetime = format(date, 'yyyy-MM-dd');
-  const displayDatetime = format(date, 'yyyy-MM-dd');
+  const datetime = format(new Date(post.frontmatter.date), 'yyyy-MM-dd');
 
   return (
     <article
@@ -58,7 +56,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post, large = false }) => {
         <PostCardMeta className="post-card-meta">
           <PostCardBylineContent className="post-card-byline-content">
             <span className="post-card-byline-date">
-              <time dateTime={datetime}>{displayDatetime}</time>{' '}
+              <time dateTime={datetime}>{datetime}</time>{' '}
             </span>
           </PostCardBylineContent>
         </PostCardMeta>
