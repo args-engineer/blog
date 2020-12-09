@@ -389,7 +389,9 @@ const PostFullImage = styled.figure`
   height: 800px;
   background: ${colors.lightgrey} center center;
   background-size: cover;
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3), 1px 5px 10px 0 rgba(0, 0, 0, 0.7);
+  overflow: hidden;
 
   @media (max-width: 1170px) {
     margin: 25px -6vw 50px;
