@@ -2,6 +2,8 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import { FluidObject } from 'gatsby-image';
 
+import { css } from '@emotion/core';
+
 import { Footer } from '../components/Footer';
 import { Main } from '../components/Main';
 import SiteNav, { SiteNavMain } from '../components/header/SiteNav';
@@ -19,7 +21,6 @@ import {
   SiteTitle,
   SiteArchiveHeader,
   ResponsiveHeaderBackground,
-  SiteHeaderBackground,
 } from '../styles/shared';
 import { PageContext } from './post';
 import { Helmet } from 'react-helmet';
@@ -57,17 +58,13 @@ const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
   const tag = pageContext.tag ? pageContext.tag : '';
   const PageTitle = `${tag} - ${config.title}`;
   const { edges, totalCount } = data.allMarkdownRemark;
-  const tagData = data.allTagYaml.edges.find(
-    n => n.node.id.toLowerCase() === tag.toLowerCase(),
-  );
+  const tagData = data.allTagYaml.edges.find(n => n.node.id.toLowerCase() === tag.toLowerCase());
 
   return (
     <IndexLayout>
       <Helmet>
         <html lang={config.lang} />
-        <title>
-          {PageTitle}
-        </title>
+        <title>{PageTitle}</title>
         <meta name="description" content={tagData?.node ? tagData.node.description : ''} />
         <meta property="og:site_name" content={config.title} />
         <meta property="og:type" content="website" />
@@ -84,36 +81,30 @@ const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
         )}
       </Helmet>
       <Wrapper>
-        <header
-          className="site-archive-header"
-          css={[SiteHeader, SiteArchiveHeader]}
-        >
+        <header className="site-archive-header" css={[SiteHeader, SiteArchiveHeader]}>
           <div css={[outer, SiteNavMain]}>
             <div css={inner}>
               <SiteNav isHome={false} />
             </div>
           </div>
-          <ResponsiveHeaderBackground
-            css={[outer, SiteHeaderBackground]}
-            backgroundImage={tagData?.node?.image?.childImageSharp?.fluid?.src}
-            className="site-header-background"
-          >
-            <SiteHeaderContent css={inner} className="site-header-content">
-              <SiteTitle className="site-title">{tag}</SiteTitle>
-              <SiteDescription className="site-description">
-                {tagData?.node.description ? (
-                  tagData.node.description
-                ) : (
-                  <>
-                    {`タグを含む記事 : ${totalCount} 件`}
-                  </>
-                )}
-              </SiteDescription>
-            </SiteHeaderContent>
-          </ResponsiveHeaderBackground>
         </header>
         <Main css={[SiteMain, outer]}>
-          <div css={inner}>
+          <div css={[inner, TagsMain]}>
+            <ResponsiveHeaderBackground
+              css={[outer]}
+              backgroundImage={tagData?.node?.image?.childImageSharp?.fluid?.src}
+              className="site-header-background"
+            >
+              <SiteHeaderContent css={inner} className="site-header-content">
+                <SiteTitle className="site-title">{tag}</SiteTitle>
+                <SiteDescription className="site-description">
+                  {tagData?.node.description}
+                </SiteDescription>
+                <SiteDescription className="site-description">
+                  {`タグを含む記事 : ${totalCount} 件`}
+                </SiteDescription>
+              </SiteHeaderContent>
+            </ResponsiveHeaderBackground>
             <div css={[PostFeed]}>
               {edges.map(({ node }) => (
                 <PostCard key={node.fields.slug} post={node} />
@@ -128,6 +119,13 @@ const Tags = ({ pageContext, data, location }: TagTemplateProps) => {
 };
 
 export default Tags;
+
+const TagsMain = css`
+  border-radius: 10px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.12), 0 5px 30px 0 rgba(0, 0, 0, 0.22);
+  padding: 30px;
+  margin: 100px 0px;
+`;
 
 export const pageQuery = graphql`
   query($tag: String) {

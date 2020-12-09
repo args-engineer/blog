@@ -156,22 +156,20 @@ export const SiteArchiveHeader = css`
   }
 `;
 
-export const SiteHeaderBackground = css`
-  margin-top: 64px;
-`;
-
 export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string }>`
   ${p =>
     p.backgroundImage &&
     `
     position: relative;
-    margin-top: 64px;
     padding-bottom: 12px;
     color: #fff;
     background-size: cover;
     /* background: color(var(--darkgrey) l(-5%)) no-repeat center center; */
     background: #090a0b no-repeat 50%;
     background-image: url(${p.backgroundImage});
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3), 1px 5px 10px 0 rgba(0,0,0,0.7);
+    z-index: 100;
 
     :before {
       content: '';
