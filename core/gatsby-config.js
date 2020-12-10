@@ -49,6 +49,12 @@ module.exports = {
               `,
             },
           },
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              rel: 'noopener noreferrer',
+            },
+          },
         ],
       },
     },
