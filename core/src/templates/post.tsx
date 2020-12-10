@@ -186,7 +186,6 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
               {post.frontmatter.image?.childImageSharp && (
                 <PostFullImage>
                   <Img
-                    style={{ height: '100%' }}
                     fluid={post.frontmatter.image.childImageSharp.fluid}
                     alt={postTitle}
                   />
@@ -251,19 +250,6 @@ export const PostFullHeader = styled.header`
   padding: 50px 0px 50px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-
-  @media (max-width: 1170px) {
-    padding: 60px 11vw 50px;
-  }
-
-  @media (max-width: 800px) {
-    padding-right: 5vw;
-    padding-left: 5vw;
-  }
-
-  @media (max-width: 500px) {
-    padding: 20px 0 35px;
-  }
 `;
 
 const PostFullTags = styled.section`
@@ -386,7 +372,7 @@ export const PostFullTitle = styled.h1`
 
 const PostFullImage = styled.figure`
   margin: 25px 0 50px;
-  height: 800px;
+  max-height: 600px;
   background: ${colors.lightgrey} center center;
   background-size: cover;
   border-radius: 10px;
@@ -394,7 +380,6 @@ const PostFullImage = styled.figure`
   overflow: hidden;
 
   @media (max-width: 1170px) {
-    margin: 25px -6vw 50px;
     border-radius: 0;
     img {
       max-width: 1170px;
@@ -402,11 +387,11 @@ const PostFullImage = styled.figure`
   }
 
   @media (max-width: 800px) {
-    height: 400px;
+    max-height: 400px;
   }
   @media (max-width: 500px) {
     margin: 0 0 4vw;
-    height: 350px;
+    max-height: 350px;
   }
 `;
 
