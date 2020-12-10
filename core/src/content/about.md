@@ -53,8 +53,8 @@ draft: false
 ### ロードマップ
 - ソース管理
     - <span style="color: #3eb0ef">[完了] 土台作り -> [scttcper/gatsby-casper](https://gatsby-casper.netlify.app/)をベースに作成。</span>
-    - ソースをリモートリポジトリにPush
-    - サイトの公開、カスタムドメイン化
+    - <span style="color: #3eb0ef">[完了] ソースをリモートリポジトリにPush</span>
+    - <span style="color: #3eb0ef">[完了] サイトの公開、カスタムドメイン化</span>
     - 記事&画像の管理方法の変更（クラウド化）
 
 - 画面デザイン
@@ -63,6 +63,7 @@ draft: false
     - サイト内検索の追加
     - Twitter Cardの埋込
     - サイトアイコンデザインの変更
+    - 画像ローディングアニメーションの追加
     - CSSの整理
 
 - SEO関連（学習目的）

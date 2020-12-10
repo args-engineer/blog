@@ -17,9 +17,9 @@ const config: WebsiteConfig = {
   coverImage: 'img/blog-cover.png',
   logo: 'img/logo.png',
   lang: 'ja',
-  siteUrl: 'https://xxxx.com',
+  siteUrl: 'https://args-engineer.com/',
   twitter: 'https://twitter.com/ArgsEngineer',
-  github: 'https://github.com',
+  github: 'https://github.com/args-engineer/blog',
   googleSiteVerification: 'GoogleCode',
   aboutPageTitle: '当サイトについて'
 };
