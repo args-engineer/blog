@@ -12,7 +12,7 @@ export interface WebsiteConfig {
 }
 
 const config: WebsiteConfig = {
-  title: 'Portfolio',
+  title: 'Args.Engineer',
   description: 'Portfolio site by Args.Engineer',
   coverImage: 'img/blog-cover.png',
   logo: 'img/logo.png',
