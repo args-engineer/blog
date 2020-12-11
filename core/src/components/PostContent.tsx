@@ -371,6 +371,7 @@ export const PostFullContent = styled.section`
   }
 
   table {
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3), 1px 5px 10px 0 rgba(0, 0, 0, 0.3);
     display: inline-block;
     overflow-x: auto;
     margin: 0.5em 0 2.5em;
