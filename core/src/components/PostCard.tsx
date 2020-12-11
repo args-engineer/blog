@@ -77,7 +77,7 @@ const PostCardStyles = css`
   background-size: cover;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 5px 30px 0 rgba(0,0,0,.22);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.12), 0 5px 30px 0 rgba(0, 0, 0, 0.22);
   -webkit-transition: transform 0.7s;
   transition: transform 0.7s;
 
@@ -91,6 +91,7 @@ const PostCardStyles = css`
       -webkit-transform: translateY(-3%);
       transform: translateY(-3%);
     }
+  }
 `;
 
 const PostCardLarge = css`
@@ -119,10 +120,11 @@ const PostCardLarge = css`
       z-index: 2;
       margin: 20px 30px 40px;
       padding: 1%;
+      box-shadow: 5px 0 3px 0 rgba(0, 0, 0, 0.3), 5px 15px 15px 0 rgba(0, 0, 0, 0.7);
+      background: rgba(197, 210, 217, 0.8);
       border-radius: 5px;
 
       @media (prefers-color-scheme: dark) {
-        box-shadow: 5px 0 3px 0 rgba(0, 0, 0, 0.3), 5px 15px 15px 0 rgba(0, 0, 0, 0.7);
         background: rgba(25, 27, 31, 0.8);
       }
     }
@@ -144,6 +146,7 @@ const NewArticles = styled.div`
   background: rgba(5, 45, 115, 0.95);
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3), 1px 5px 10px 0 rgba(0, 0, 0, 0.7);
   padding: 2px 35px;
+  color: #fff;
   position: fixed;
   margin: 5px 0 0 10px;
   z-index: 3;
@@ -169,18 +172,22 @@ const PostCardContent = styled.div`
 
 const PostCardPrimaryTag = styled.div`
   margin: 0 0 0.2em;
-  /* color: var(--blue); */
-  color: ${colors.blue};
+  color: ${lighten('0.1' ,colors.darkgrey)};
   font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.2px;
   display: flex;
   align-items: center;
-  background-color: #25282e;
+  background-color: ${lighten('0.22' ,colors.midgrey)};
   padding: 1px 4px;
   border-radius: 4px;
   margin-bottom: 4px;
   margin-right: 4px;
+
+  @media (prefers-color-scheme: dark) {
+    color: ${colors.blue};
+    background-color: #25282e;
+  }
 `;
 
 const PostCardTitle = styled.h2`
@@ -213,7 +220,7 @@ const PostCardBylineContent = styled.div`
   flex-direction: column;
   margin: 4px 0 0 10px;
   /* color: color(var(--midgrey) l(+10%)); */
-  color: ${lighten('0.1', colors.midgrey)};
+  color: ${lighten('0.2', colors.darkgrey)};
   font-size: 1.2rem;
   line-height: 1.4em;
   font-weight: 400;
@@ -223,16 +230,8 @@ const PostCardBylineContent = styled.div`
     margin: 0;
   }
 
-  a {
-    /* color: color(var(--darkgrey) l(+20%)); */
-    color: ${lighten('0.2', colors.darkgrey)};
-    font-weight: 600;
-  }
-
   @media (prefers-color-scheme: dark) {
-    a {
-      color: rgba(255, 255, 255, 0.75);
-    }
+    color: ${lighten('0.1', colors.midgrey)};
   }
 `;
 

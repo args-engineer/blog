@@ -35,7 +35,7 @@ export const PostFullContent = styled.section`
   font-family: 'Noto Serif JP', Georgia, serif;
   font-size: 2rem;
   line-height: 1.6em;
-  background: #fff;
+  background: ${colors.lightgrey};
 
   @media (max-width: 1170px) {
     padding: 0 11vw;
@@ -396,21 +396,11 @@ export const PostFullContent = styled.section`
   }
 
   table td:first-of-type {
-    background-image: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
     background-size: 20px 100%;
     background-repeat: no-repeat;
   }
 
   table td:last-child {
-    background-image: linear-gradient(
-      to left,
-      rgba(255, 255, 255, 1) 50%,
-      rgba(255, 255, 255, 0) 100%
-    );
     background-position: 100% 0;
     background-size: 20px 100%;
     background-repeat: no-repeat;
@@ -424,7 +414,7 @@ export const PostFullContent = styled.section`
     letter-spacing: 0.2px;
     text-align: left;
     /* background-color: color(var(--whitegrey) l(+4%)); */
-    background-color: ${lighten('0.04', colors.whitegrey)};
+    background-color: ${lighten('0.04', colors.midgrey)};
   }
 
   table th,

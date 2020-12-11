@@ -69,14 +69,6 @@ const ReadNextCardArticle = styled.article`
   overflow: hidden;
   margin: 0 5px 40px;
   padding: 30px 20px 40px;
-  /* background: linear-gradient(
-    color(var(--darkgrey) l(+2%)),
-    color(var(--darkgrey) l(-5%))
-  ); */
-  background: linear-gradient(
-    ${lighten('0.02', colors.darkgrey)},
-    ${lighten('-0.05', colors.darkgrey)}
-  );
   border-radius: 10px;
 
   a {
@@ -117,8 +109,7 @@ const ReadNextCardArticle = styled.article`
 
 const ReadNextCardHeaderTitle = styled.h3`
   margin: 0;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 2.0rem;
+  font-size: 2rem;
   line-height: 1em;
   font-weight: 300;
   letter-spacing: 0.4px;
@@ -132,6 +123,10 @@ const ReadNextCardHeaderTitle = styled.h3`
 
   a:hover {
     opacity: 1;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: rgba(255, 255, 255, 0.6);
   }
 `;
 

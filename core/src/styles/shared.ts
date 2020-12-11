@@ -58,7 +58,7 @@ export const PostFeed = css`
   flex-wrap: wrap;
   margin: 0 -20px;
   padding: 50px 0 0;
-  background: #fff;
+  background: ${colors.lightgrey};
 
   /* Special Template Styles */
   padding: 40px 0 5vw;
@@ -211,7 +211,7 @@ export const ResponsiveHeaderBackground = styled.div<{ backgroundImage?: string 
     padding-bottom: 0;
     /* color: var(--darkgrey); */
     color: ${colors.darkgrey};
-    background: #fff;
+    background: ${colors.lightgrey};
     opacity: 1;
 
 
@@ -303,7 +303,7 @@ export const NoImage = css`
     padding-bottom: 0;
     /* color: var(--darkgrey); */
     color: ${colors.darkgrey};
-    background: #fff;
+    background: ${colors.lightgrey};
     opacity: 1;
   }
 

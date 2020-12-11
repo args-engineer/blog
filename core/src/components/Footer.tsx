@@ -38,10 +38,14 @@ const SiteFooter = css`
   position: relative;
   padding-top: 20px;
   padding-bottom: 60px;
-  color: #fff;
-  background: ${colors.darkmode};
+  color: ${colors.darkgrey};
   margin-top: auto;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media (prefers-color-scheme: dark) {
+    color: #fff;
+    background: ${colors.darkmode};
+  }
 `;
 
 const SiteFooterContent = css`
@@ -49,17 +53,29 @@ const SiteFooterContent = css`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(21, 23, 26, 0.7);
   font-size: 1.3rem;
   a {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(21, 23, 26, 0.7);
   }
   a:hover {
-    color: rgba(255, 255, 255, 1);
+    color: rgba(21, 23, 26, 1);
     text-decoration: none;
   }
   @media (max-width: 650px) {
     flex-direction: column;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: rgba(255, 255, 255, 0.7);
+
+    a {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    a:hover {
+      color: rgba(255, 255, 255, 1);
+      text-decoration: none;
+    }
   }
 `;
 

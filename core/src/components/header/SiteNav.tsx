@@ -122,7 +122,7 @@ export const SiteNavMain = css`
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.6);
 
   ::after {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.18);
     content: '';
     position: absolute;
     left: 0;

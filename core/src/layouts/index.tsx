@@ -20,7 +20,10 @@ const IndexLayout: React.FC<IndexProps> = props => {
 
         {/* Google Web Fonts: Noto Serif JP Extra-light 200 */}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap"
+          rel="stylesheet"
+        />
       </Helmet>
       <Global
         styles={css`
@@ -281,8 +284,8 @@ const IndexLayout: React.FC<IndexProps> = props => {
           body {
             overflow-x: hidden;
             color: ${lighten('-0.3', colors.midgrey)};
-            font-family: 'Noto Serif JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-              Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: 'Noto Serif JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+              Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             font-size: 1.6rem;
             line-height: 1.6em;
             font-weight: 400;
@@ -484,7 +487,7 @@ const IndexLayout: React.FC<IndexProps> = props => {
 
           /* globals from screen.css */
           body {
-            background: #fff;
+            background: ${colors.lightgrey};
           }
 
           @media (prefers-color-scheme: dark) {

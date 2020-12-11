@@ -58,24 +58,28 @@ const ReadNextAside = styled.aside`
     display: none;
   }
   .post-card-title {
-    color: #fff;
     opacity: 0.8;
     transition: all 0.2s ease-in-out;
+
+    @media (prefers-color-scheme: dark) {
+      color: #fff;
+    }
   }
   .post-card:hover .post-card-image {
     opacity: 1;
   }
   .post-card-excerpt {
-    color: rgba(255, 255, 255, 0.6);
+    @media (prefers-color-scheme: dark) {
+      color: rgba(255, 255, 255, 0.6);
+    }
   }
   .static-avatar {
     border-color: #000;
   }
   .post-card-byline-content {
-    color: rgba(255, 255, 255, 0.6);
-  }
-  .post-card-byline-content a {
-    color: rgba(255, 255, 255, 0.8);
+    @media (prefers-color-scheme: dark) {
+      color: rgba(255, 255, 255, 0.6);
+    }
   }
 `;
 

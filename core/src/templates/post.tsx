@@ -185,10 +185,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
 
               {post.frontmatter.image?.childImageSharp && (
                 <PostFullImage>
-                  <Img
-                    fluid={post.frontmatter.image.childImageSharp.fluid}
-                    alt={postTitle}
-                  />
+                  <Img fluid={post.frontmatter.image.childImageSharp.fluid} alt={postTitle} />
                 </PostFullImage>
               )}
               <PostContent htmlAst={post.htmlAst} />
@@ -211,8 +208,7 @@ const PageTemplate = ({ data, pageContext, location }: PageTemplateProps) => {
 
 const PostTemplate = css`
   .site-main {
-    margin-top: 64px;
-    background: #fff;
+    background: ${colors.lightgrey};
     padding-bottom: 4vw;
   }
 
@@ -266,11 +262,17 @@ const PostFullTags = styled.section`
 const PostLinkTags = styled(props => <Link {...props} />)`
   display: flex;
   align-items: center;
-  background-color: #25282e;
+  color: ${lighten('0.1' ,colors.darkgrey)};
+  background-color: ${lighten('0.22' ,colors.midgrey)};
   padding: 1px 4px;
   border-radius: 4px;
   margin-bottom: 4px;
   margin-right: 4px;
+
+  @media (prefers-color-scheme: dark) {
+    color: ${colors.blue};
+    background-color: #25282e;
+  }
 `;
 
 const PostFullCustomExcerpt = styled.p`
@@ -314,7 +316,7 @@ const PostFullByline = styled.div`
   .post-full-byline-meta {
     margin: 2px 0 0;
     /* color: color(var(--midgrey) l(+10%)); */
-    color: ${lighten('0.1', colors.midgrey)};
+    color: ${lighten('0.1', colors.darkgrey)};
     font-size: 1.2rem;
     line-height: 1.2em;
     letter-spacing: 0.2px;
@@ -346,6 +348,10 @@ const PostFullByline = styled.div`
   @media (prefers-color-scheme: dark) {
     /* border-top-color: color(var(--darkmode) l(+15%)); */
     border-top-color: ${lighten('0.15', colors.darkmode)};
+
+    .post-full-byline-meta {
+      color: ${lighten('0.1', colors.midgrey)};
+    }
 
     .post-full-byline-meta h4 a {
       color: rgba(255, 255, 255, 0.75);
