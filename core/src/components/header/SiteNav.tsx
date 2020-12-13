@@ -78,9 +78,15 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
             <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
               <ul css={NavStyles} role="menu">
                 <li role="menuitem">
-                  <HeaderLinkTags to="/about">
+                  <HeaderLinkTags to="/about/">
                     <span className={'en'}>About / Author</span>
                     <span className={'jp'}>{config.aboutPageTitle}</span>
+                  </HeaderLinkTags>
+                </li>
+                <li role="menuitem">
+                  <HeaderLinkTags to="/tags/start-up/">
+                    <span className={'en'}>Start - up</span>
+                    <span className={'jp'}>スタートアップ</span>
                   </HeaderLinkTags>
                 </li>
               </ul>
