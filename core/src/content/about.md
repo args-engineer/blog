@@ -19,7 +19,7 @@ draft: false
 - 2012年 - 私立文系大学経済学部に入学、上京
 - 2016年 - 大学卒業後、新卒採用で中堅IT企業に入社。BtoB業務系アプリケーション開発案件を中心に参画
 - 2018年 - 新卒2年目の年末に退社し、年始からフリーランスのバックエンドエンジニアとして活動（開発言語および案件はC#がメイン）
-- 現在 - フロントエンドエンジニアへのスキルチェンジを目指して<span style="color: #3eb0ef">React + GatsbyJS</span>を学習中
+- 現在 - フロントエンドエンジニアへのスキルチェンジを目指して<span style="color: #3eb0ef">React + Gatsby</span>を学習中
 
 ###### スキル
 | 種別 | 技術名 | 経験期間（累計） | 開発経験 | 関連技術、ライブラリ、ツール |
@@ -44,7 +44,7 @@ draft: false
 |  |  |
 | :-- | :-- |
 |   開発言語   |   [React](https://ja.reactjs.org/) + [TypeScript](https://www.typescriptlang.org/ja/)  |
-|   フレームワーク   |   [GatsbyJS](https://www.gatsbyjs.com/)（Reactベースの静的サイトジェネレーター）   |
+|   フレームワーク   |   [Gatsby](https://www.Gatsby.com/)（Reactベースの静的サイトジェネレーター）   |
 |   IDE（統合開発環境）   |   [Visual Studio Code](https://azure.microsoft.com/ja-jp/products/visual-studio-code/)  |
 |   ソース管理  |   [Git](https://git-scm.com/) + [GitHub](https://github.co.jp/)（公開用） |
 |   ホスティングサービス  |   [Netlify](https://www.netlify.com/) |
