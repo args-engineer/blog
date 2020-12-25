@@ -143,15 +143,15 @@ const IndexPage: React.FC<IndexProps> = props => {
 };
 
 export const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!) {
-    logo: file(relativePath: { eq: "img/logo.png" }) {
+  query blogPageQuery($skip: Int!, $limit: Int!, $logo: String, $header: String) {
+    logo: file(relativePath: { eq: $logo }) {
       childImageSharp {
         fixed {
           ...GatsbyImageSharpFixed
         }
       }
     }
-    header: file(relativePath: { eq: "img/blog-cover.png" }) {
+    header: file(relativePath: { eq: $header }) {
       childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed

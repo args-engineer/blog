@@ -1,7 +1,7 @@
 export interface WebsiteConfig {
   title: string;
   description: string;
-  coverImage?: string;
+  coverImage: string;
   logo: string;
   lang: string;
   siteUrl: string;

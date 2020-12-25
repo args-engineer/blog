@@ -1,26 +1,55 @@
 /* eslint-disable @typescript-eslint/restrict-plus-operands, @typescript-eslint/no-var-requires */
-const path = require('path');
-const _ = require('lodash');
+import path from 'path';
+import _ from 'lodash';
+import { GatsbyNode } from 'gatsby';
+import { FluidObject } from 'gatsby-image';
+import { createFilePath } from 'gatsby-source-filesystem';
+import config from '../website-config';
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
+interface Frontmatter {
+  permalink: string;
+  layout: string;
+  primaryTag: string;
+}
+
+interface Result {
+  allMarkdownRemark: {
+    edges: Array<{
+      node: {
+        excerpt: string;
+        fields: {
+          slug: string;
+          layout: string;
+        };
+        frontmatter: {
+          image: {
+            childImageSharp: {
+              fluid: FluidObject;
+            };
+          };
+          excerpt: string;
+          title: string;
+          date: string;
+          draft?: boolean;
+          tags: string[];
+        };
+      };
+    }>;
+  };
+}
+
+export const onCreateNode: GatsbyNode['onCreateNode'] = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   // eslint-disable-next-line default-case
   switch (node.internal.type) {
     case 'MarkdownRemark': {
-      const { permalink, layout, primaryTag } = node.frontmatter;
-      const { relativePath } = getNode(node.parent);
-
-      let slug = permalink;
-
-      if (!slug) {
-        slug = `/${relativePath.replace('.md', '')}/`;
-      }
+      const { permalink, layout, primaryTag }: Frontmatter = node.frontmatter as Frontmatter;
 
       createNodeField({
         node,
         name: 'slug',
-        value: slug || '',
+        value: permalink || createFilePath({ node, getNode })?.replace('.md', '') || '',
       });
 
       createNodeField({
@@ -38,10 +67,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
-
-  const result = await graphql(`
+export const createPages: GatsbyNode['createPages'] = async ({
+  graphql,
+  actions: { createPage },
+}) => {
+  const result = await graphql<Result>(`
     {
       allMarkdownRemark(
         limit: 2000
@@ -79,7 +109,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  if (result.errors) {
+  if (result.errors || !result.data) {
     console.error(result.errors);
     throw new Error(result.errors);
   }
@@ -96,6 +126,8 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
+        logo: config.logo,
+        header: config.coverImage,
         numPages,
         currentPage: i + 1,
       },
@@ -140,10 +172,10 @@ exports.createPages = async ({ graphql, actions }) => {
 };
 
 // DevTool Build設定(開発時のみ)
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
+export const onCreateWebpackConfig: GatsbyNode['onCreateWebpackConfig'] = ({ stage, actions }) => {
   if (stage === 'develop' || stage === 'develop-html') {
     actions.setWebpackConfig({
-      devtool: 'eval-source-map' // build - slow / rebuild - fast / original source
+      devtool: 'eval-source-map', // build - slow / rebuild - fast / original source
     });
   }
 };
