@@ -16,7 +16,7 @@ const gatsbyConfig: GatsbyConfig = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: 'gatsby-plugin-google-gtag',
       options: {
         trackingIds: [process.env.GATSBY_GA_TRACKING_ID],
         pluginConfig: {
@@ -65,6 +65,15 @@ const gatsbyConfig: GatsbyConfig = {
                   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3), 1px 5px 10px 0 rgba(0, 0, 0, 0.7);
                   overflow: hidden;
                 `,
+              linkImagesToOriginal: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-images-medium-zoom`,
+            options: {
+              background: 'rgba(197, 210, 217, 0.4)',
+              margin: 100,
+              zIndex: 2000,
             },
           },
           {
@@ -95,7 +104,7 @@ const gatsbyConfig: GatsbyConfig = {
         postCssPlugins: [require('postcss-color-function'), require('cssnano')()],
       },
     },
-    `gatsby-plugin-catch-links`,
+    'gatsby-plugin-catch-links',
   ],
 };
 
