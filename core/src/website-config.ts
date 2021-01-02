@@ -14,7 +14,7 @@ export interface WebsiteConfig {
 const config: WebsiteConfig = {
   title: 'Args.Engineer',
   description: 'Portfolio site by Args.Engineer',
-  coverImage: 'img/blog-cover.png',
+  coverImage: 'img/blog-cover.jpg',
   logo: 'img/logo.png',
   lang: 'ja',
   siteUrl: 'https://args-engineer.com/',

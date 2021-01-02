@@ -18,7 +18,7 @@ excerpt: React + Gatsbyで作るサイトの開発環境・サイトの新規作
 前回の記事ではスタートアップにあたり、ポートフォリオ作成のきっかけとアーキテクチャの選定理由を4点に分けてお話ししました。<br>
 当記事ではReact + Gatsbyで作るサイトの開発環境・サイトの新規作成の過程を解説します。
 
-　<small>前回：[【スタートアップ編Ⅰ】React + GatsbyJSを選んだ理由](/2020-12-13/)</small>
+　<small>前回：[【スタートアップ編Ⅰ】React + GatsbyJSを選んだ理由](/start-up-01/)</small>
 
 ---
 
@@ -50,7 +50,7 @@ excerpt: React + Gatsbyで作るサイトの開発環境・サイトの新規作
 
 [公式サイト](https://code.visualstudio.com/download)からダウンロードし、インストールします。（自環境に合わせて今回はWindowsを選択。設定は基本デフォルト。）
 
-![GATSBY_EMPTY_ALT](img/2020-12-15-01.png)
+![start-up-02-01.jpg](img/start-up-02-01.jpg)
 
 ---
 
@@ -58,20 +58,20 @@ excerpt: React + Gatsbyで作るサイトの開発環境・サイトの新規作
 
 1. Visual Studio Codeを起動して拡張機能のタブを開き、「[npm support for VS Code](https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script)」をインストールします。
 
-![GATSBY_EMPTY_ALT](img/2020-12-15-02.png)
+![start-up-02-02.jpg](img/start-up-02-02.jpg)
 
 これでVisual Studio Codeの「ターミナル」からnpmのコマンドが使えるようになります。<br>
 ※他にも[Japanese Language Pack for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ja)というVisual Studio Codeの日本語化パッチを追加しています。お好みでどうぞ！
 
 2. 「cmd（コマンドプロンプト）」の新しいターミナルを開きます。（既にGit Bashをインストール済の場合は「bash」でも大丈夫です。）
 
-![GATSBY_EMPTY_ALT](img/2020-12-15-03.png)
+![start-up-02-03.jpg](img/start-up-02-03.jpg)
 
 ※「cmd」にならない場合は「既定のシェルの選択」で「Command Prompt」を選択した後、再度新しいターミナルを開きます。
 
-![GATSBY_EMPTY_ALT](img/2020-12-15-04.png)
+![start-up-02-04.jpg](img/start-up-02-04.jpg)
 
-![GATSBY_EMPTY_ALT](img/2020-12-15-05.png)
+![start-up-02-05.jpg](img/start-up-02-05.jpg)
 
 3. 以下のコマンドを入力し、npmのバージョンを確認します。（インストールされたかチェック。）
 
@@ -154,7 +154,7 @@ View GraphiQL, an in-browser IDE, to explore your site's data and schema
 このローカル環境に作成されたコピーをもとに、自分の目指すサイトをイメージしながら改修を加えていきます。
 
 次回は**「コーディング（実装）・デバッグ」**編になります。<br>
-　<small>次回：[【スタートアップ編Ⅲ】コーディング（実装）・デバッグ](/2020-12-17/)</small>
+　<small>次回：[【スタートアップ編Ⅲ】コーディング（実装）・デバッグ](/start-up-03/)</small>
 
 ---
 

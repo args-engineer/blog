@@ -32,7 +32,7 @@ const scroll = (): void => {
 };
 
 const ScrollToTopStyles = css`
-  background-image: url(${require('../../content/img/ScrollToTop.png')});
+  background-image: url(${require('../../content/img/scroll-to-top.png')});
   cursor: pointer;
   position: fixed;
   right: 5%;

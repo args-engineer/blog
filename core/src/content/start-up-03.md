@@ -18,7 +18,7 @@ excerpt: React + Gatsbyで作るサイトのコーディング（実装）・デ
 前回の記事ではReact + Gatsbyで作るサイトの開発環境・サイトの新規作成の過程をお話ししました。<br>
 当記事では実際のコーディング（実装）・デバッグ方法を解説します。
 
-　<small>前回：[【スタートアップ編Ⅱ】開発環境・サイトの新規作成（Gatsby Starters）](/2020-12-15/)</small>
+　<small>前回：[【スタートアップ編Ⅱ】開発環境・サイトの新規作成（Gatsby Starters）](/start-up-02/)</small>
 
 ---
 
@@ -72,15 +72,15 @@ Gatsbyにはホットリロード機能が備わっており、ビルド後は�
 
 - まずはVisual Studio CodeからDebugger for Chromeをインストールします。
 
-![GATSBY_EMPTY_ALT](img/2020-12-17-01.png)
+![start-up-03-01.jpg](img/start-up-03-01.jpg)
 
 - インストール完了後デバッグのタブを開き、「構成の追加」を選択します。未作成の場合`launch.json`が作成されます。<br>
 
-![GATSBY_EMPTY_ALT](img/2020-12-17-02.png)
+![start-up-03-02.jpg](img/start-up-03-02.jpg)
 
 - 表示されるメニューから`Chrome: Launch`を選択します。
 
-![GATSBY_EMPTY_ALT](img/2020-12-17-03.png)
+![start-up-03-03.jpg](img/start-up-03-03.jpg)
 
 `launch.json`の`url`の値を`http://localhost:8000`に変更します。（デフォルトでは`http://localhost:8080`）<br>
 `name`（構成の名称）は任意の値に変更が可能です。
@@ -103,16 +103,16 @@ Gatsbyにはホットリロード機能が備わっており、ビルド後は�
 
 - 動作を確認したい行にブレークポイントを付けます。(拡張子が .js、.ts、.tsx　のファイル。）
 
-![GATSBY_EMPTY_ALT](img/2020-12-17-04.png)
+![start-up-03-04.jpg](img/start-up-03-04.jpg)
 
 - ローカル環境のビルド&サイトが立ち上がっている状態でデバッグタブの実行アイコンをクリック、デバッグを開始します。
 
-![GATSBY_EMPTY_ALT](img/2020-12-17-05.png)
+![start-up-03-05.jpg](img/start-up-03-05.jpg)
 
 - ブレークポイントの地点で処理が一時停止します。この状態で変数にカーソルを合わせると格納されている値が確認できるようになります。<br>
 勿論一時停止だけではなくステップイン、ステップオーバー、ステップアウトもできます。
 
-![GATSBY_EMPTY_ALT](img/2020-12-17-06.png)
+![start-up-03-06.jpg](img/start-up-03-06.jpg)
 
 Debugger for Chromeの詳しい使い方についてはここでは割愛します。<br>
 　<small>参考：[Debugger for Chrome - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)</small>
@@ -180,4 +180,4 @@ gatsby clean
 このように、デバッグで逐一内容を確認しながら実装を進めていきます。
 
 次回は**「リモートリポジトリの作成・GitHubへのプッシュ」**編になります。
-　<small>次回：[【スタートアップ編Ⅳ】リモートリポジトリの作成・GitHubへのプッシュ](/2020-12-24/)</small>
+　<small>次回：[【スタートアップ編Ⅳ】リモートリポジトリの作成・GitHubへのプッシュ](/start-up-04/)</small>

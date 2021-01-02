@@ -71,7 +71,7 @@ ITエンジニアのポートフォリオは個人によって様々です。デ
 [Google Trend](https://trends.google.co.jp/trends/explore/TIMESERIES/1545557400?hl=ja&tz=-540&cat=13&q=/m/012l1vxv,/m/0j45p7w,/g/11c0vmgx5d&geo=,,&date=today+5-y,today+5-y,today+5-y&sni=3)で調べた結果、Reactはシェアに関して頭一つ抜けている印象です。<br>
 （トレンドワードの単純な比較ですので正確なシェアではないかもしれません。）
 
-![Google-Trends-Angular-Vue-React](img/Google-Trends-Angular-Vue-React.png)
+![start-up-01-01.jpg](img/start-up-01-01.jpg)
 
 また、それぞれを比較した記事を調べたところ、一般的にAngularは初期の学習コストが高くVueはTypeScriptとの相性補完がまだ完全ではないとされている点が懸念でした。（VueのTypeScript対応に関しては徐々に向上している模様です。）<br>
 
@@ -107,4 +107,4 @@ Netlify公式によると、[Gatsbyで構成されたサイトの実に半分以
 こうしてポートフォリオのアーキテクチャも定まり、早速開発に着手したのでした。
 
 次回は**「開発環境・サイトの新規作成」**編になります。<br>
-　<small>次回：[【スタートアップ編Ⅱ】開発環境・サイトの新規作成（Gatsby Starters）](/2020-12-15/)</small>
+　<small>次回：[【スタートアップ編Ⅱ】開発環境・サイトの新規作成（Gatsby Starters）](/start-up-02/)</small>

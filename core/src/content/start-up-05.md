@@ -18,7 +18,7 @@ excerpt: React + Gatsbyで作るサイトのNetlifyを使ったサイトの公�
 前回の記事ではVisual Studio Codeを使ったGitHubへのプッシュをお話ししました。<br>
 当記事では最後にNetlifyを使ったサイトの公開方法を解説します。
 
-　<small>前回：[リモートリポジトリの作成・GitHubへのプッシュ](/2020-12-24/)</small>
+　<small>前回：[リモートリポジトリの作成・GitHubへのプッシュ](/start-up-04/)</small>
 
 ---
 
@@ -35,25 +35,25 @@ excerpt: React + Gatsbyで作るサイトのNetlifyを使ったサイトの公�
 Netlifyは非常に明快なステップでアカウントとサイトを作ることができます。<br>
 最初に、[公式ページ](https://www.netlify.com/)の`Get started in secounds`ボタンを押下します。
 
-![GATSBY_EMPTY_ALT](img/2020-12-26-01.png)
+![start-up-05-01.jpg](img/start-up-05-01.jpg)
 
 アカウント情報を入力して、新規にNetlifyのアカウントを作成します。<br>
 サインアップにはGitHubのアカウントを使用しましょう。（GitHubの認証画面に遷移します。）
 
-![GATSBY_EMPTY_ALT](img/2020-12-26-02.png)
+![start-up-05-02.jpg](img/start-up-05-02.jpg)
 
 アカウントの作成が完了するとチームページに遷移します。<br>
 次は`New site from Git`ボタンを押下し、新規にサイトを作成します。
 
-![GATSBY_EMPTY_ALT](img/2020-12-26-03.png)
+![start-up-05-03.jpg](img/start-up-05-03.jpg)
 
 ここでもGitHubを選択します。（再度GitHubの認証画面に遷移します。）
 
-![GATSBY_EMPTY_ALT](img/2020-12-26-04.png)
+![start-up-05-04.jpg](img/start-up-05-04.jpg)
 
 連携対象のリポジトリを選択します。
 
-![GATSBY_EMPTY_ALT](img/2020-12-26-05.png)
+![start-up-05-05.jpg](img/start-up-05-05.jpg)
 
 最後に、デプロイのオプションを入力します。<br>
 - `Branch to deploy`にはデプロイ対象のブランチ名を入力します。このブランチへのプッシュを検知して自動でビルド&デプロイが実行されるようになります。
@@ -62,7 +62,7 @@ Netlifyは非常に明快なステップでアカウントとサイトを作る�
 
 設定が完了したら`Deploy site`ボタンを押下します。サイトの作成とデプロイ、公開が同時に行われます。
 
-![GATSBY_EMPTY_ALT](img/2020-12-26-06.png)
+![start-up-05-06.jpg](img/start-up-05-06.jpg)
 
 公開に成功すると`XXXXXX.netlify.app`というデフォルトのURLでサイトが閲覧できるようになります。
 
@@ -74,7 +74,7 @@ Netlifyは非常に明快なステップでアカウントとサイトを作る�
 `Base directory`と`Public directory`の項目を確認し、`Public directory`のフォルダの位置が正しいか確認しましょう。<br>
 当サイトの場合はリポジトリの最上層が`core`となっているため、`Public directory`（バンドルを格納しているフォルダ）の位置は`core/public/`になります。
 
-![GATSBY_EMPTY_ALT](img/2020-12-26-07.png)
+![start-up-05-07.jpg](img/start-up-05-07.jpg)
 
 ---
 
@@ -83,7 +83,7 @@ Netlifyは非常に明快なステップでアカウントとサイトを作る�
 このままでもデフォルトのURLでも良いですが、独自のドメインにしたい場合は以下の手順で設定します。<br>
 チームページから`Team overview`→`Domains`タブを選択→サイト名を押下→`DNS settings`に遷移し、`Name servers`の値を確認します。
 
-![GATSBY_EMPTY_ALT](img/2020-12-26-08.png)
+![start-up-05-08.jpg](img/start-up-05-08.jpg)
 
 次にドメインを取得しましょう。私はドメインサービスに[お名前.com](https://www.onamae.com/)を選択し、`args-engineer.com`というドメインを取得しました。
 
@@ -105,12 +105,12 @@ Netlifyは非常に明快なステップでアカウントとサイトを作る�
 
 `その他のネームサーバーを使う`を選択し、Netlifyのネームサーバーの値を1~4まで順に入力します。
 
-![GATSBY_EMPTY_ALT](img/2020-12-26-09.png)
+![start-up-05-09.jpg](img/start-up-05-09.jpg)
 
 これでドメイン側の設定は終わりです。<br>
 あとはNetlify側でサイトページから`Site overview`→`Site settings`→`Domain management`に遷移し、`Add domain alias`ボタンを押下して取得したドメイン名を入力すれば完了です。
 
-![GATSBY_EMPTY_ALT](img/2020-12-26-10.png)
+![start-up-05-10.jpg](img/start-up-05-10.jpg)
 
 ドメイン設定が完全に反映されるまでは30分～1時間程度掛かりますので焦らずに待ちましょう。<br>
 これでGatsbyベースかつ独自ドメインのサイトを公開することができました！

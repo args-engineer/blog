@@ -124,7 +124,7 @@ export const SiteNavMain = css`
   right: 0;
   left: 0;
   z-index: 1000;
-  background-image: url(${require('../../content/img/blog-cover.png')});
+  background-image: url(${require('../../content/img/blog-cover.jpg')});
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.6);
 
   ::after {

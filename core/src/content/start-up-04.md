@@ -18,7 +18,7 @@ excerpt: React + Gatsbyで作るサイトのリモートリポジトリの作成
 前回の記事では実際のコーディング（実装）・デバッグ方法をお話ししました。<br>
 当記事ではリモートリポジトリの作成およびVisual Studio Codeを使ったGitHubへのプッシュを解説します。
 
-　<small>前回：[【スタートアップ編Ⅲ】コーディング（実装）・デバッグ](/2020-12-17/)</small>
+　<small>前回：[【スタートアップ編Ⅲ】コーディング（実装）・デバッグ](/start-up-03/)</small>
 
 ---
 
@@ -27,17 +27,17 @@ excerpt: React + Gatsbyで作るサイトのリモートリポジトリの作成
 ソースの管理を行うために[Git](https://git-scm.com/)をインストールします。<br>
 Windowsでの開発になりますので`Git for Windows`を選択します。選択すると自動でインストーラーのダウンロードが始まります。
 
-![GATSBY_EMPTY_ALT](img/2020-12-24-01.png)
+![start-up-04-01.jpg](img/start-up-04-01.jpg)
 
 基本的にデフォルトの選択肢でOKですが、`Choosing the default editor used by Git`の部分だけ`Use Visual Studio Code as Git's default editor`を選択してください。<br>
 既にVisual Studio Codeがインストール済の場合はGit Bashの設定が自動で追加されます。
 
-![GATSBY_EMPTY_ALT](img/2020-12-24-02.png)
+![start-up-04-02.jpg](img/start-up-04-02.jpg)
 
 もし設定を間違えた、または先にGitのインストールから行った場合はVisual Studio Codeの設定を変更します。<br>
 Visual Studio Codeを開き、`Ctrl + Shift + P`を押下してコマンドパレットを呼び出し、`Open Settings（JSON）`を選択します。
 
-![GATSBY_EMPTY_ALT](img/2020-12-24-03.png)
+![start-up-04-03.jpg](img/start-up-04-03.jpg)
 
 `settings.json`が開かれるので、全体を囲う`{}`の内側に以下の一行を追加します。<br>
 この設定によりターミナルからGit Bashが開けるようになります。
@@ -57,18 +57,18 @@ Gitで管理したいソースが作成済と仮定してローカルで`master`
 
 Gitで管理しているフォルダを選択していない時、Visual Studio Codeの下帯は紫色の状態になります。
 
-![GATSBY_EMPTY_ALT](img/2020-12-24-04.png)
+![start-up-04-04.jpg](img/start-up-04-04.jpg)
 
 まずはGitで管理したいフォルダを選択します。フォルダを選択するとVisual Studio Codeの下帯が青色の状態になります。<br>
 （Gatsby Starterからコピーを作成した場合、コピーを配置したフォルダの一番上の階層になります。）
 
 次に、`リポジトリを初期化する`を選択します。
 
-![GATSBY_EMPTY_ALT](img/2020-12-24-05.png)
+![start-up-04-05.jpg](img/start-up-04-05.jpg)
 
 `[git init]`コマンドが実行され、選択したフォルダに`.git`ファイルが作成されます。（表示されない場合は隠しファイルの表示をONにしてみてください。）
 
-![GATSBY_EMPTY_ALT](img/2020-12-24-06.png)
+![start-up-04-06.jpg](img/start-up-04-06.jpg)
 
 この`.git`ファイルと同階層のフォルダ以下がGitリポジトリ管理の単位になります。<br>
 例えば私の場合は`blog`フォルダを選択していますが、ひとつ上の階層になる`LocalRepository`フォルダには他にもGitで管理しているフォルダがあります。<br>
@@ -84,7 +84,7 @@ Visual Studio CodeはGitの連携に力を入れており、**GUI（マウスを
 リポジトリの初期化が完了すると左下に`master`という文字が表示されるようになります。これは現在チェックアウトしているブランチを差し、初期化直後は必ず`master`ブランチになります。<br>
 文字の右側の雲のアイコンはリモートリポジトリを登録していない場合に表示されます。
 
-![GATSBY_EMPTY_ALT](img/2020-12-24-07.png)
+![start-up-04-07.jpg](img/start-up-04-07.jpg)
 
 また、ファイルを新規に追加すると`master`の文字の右上に`*`のアイコンが付きます。これはまだステージしていないファイルが存在する場合にチェックされます。
 ステージとは簡単に言えばコミット対象のファイルのことです。（厳密には異なります。）<br>
@@ -92,16 +92,16 @@ Visual Studio CodeはGitの連携に力を入れており、**GUI（マウスを
 
 ファイルにカーソルを合わせると右側に`+`のアイコンが表示され、押下すると選択したファイルがステージされます。
 
-![GATSBY_EMPTY_ALT](img/2020-12-24-08.png)
+![start-up-04-08.jpg](img/start-up-04-08.jpg)
 
 ステージしたファイルがあると`master`の文字の右上に`+`のアイコンが付きます。
 
-![GATSBY_EMPTY_ALT](img/2020-12-24-09.png)
+![start-up-04-09.jpg](img/start-up-04-09.jpg)
 
 ステージしたファイルをコミットしましょう。上部のテキストエリアにコミットメッセージを記載し、`✓`のアイコンを押下します。<br>
 ステージしたファイルがクリアされて`master`の文字右上の`+`のアイコンが消えたらコミット完了です。
 
-![GATSBY_EMPTY_ALT](img/2020-12-24-10.png)
+![start-up-04-10.jpg](img/start-up-04-10.jpg)
 
 Gitは本来**CUI（コマンド操作）ベース**のツールですが、このようにVisual Studio Codeでは基本的な操作であれば画面上から行うことができます。
 
@@ -115,20 +115,20 @@ GitHubはリモートリポジトリを提供するプラットフォームの�
 [公式ページ](https://github.co.jp/)からGitHubのアカウントを新規に作成します。プランは`Free`を選択します。手順については以下のサイト様が参考になります。（新規作成にはメールアドレスが必要です。）<br>
 　<small>参考：[1分もかからない！5ステップでGitHubアカウント作成 | アールエフェクト](https://reffect.co.jp/html/create_github_account_first_time)</small>
 
-![GATSBY_EMPTY_ALT](img/2020-12-24-11.png)
+![start-up-04-11.jpg](img/start-up-04-11.jpg)
 
 アカウント作成＆ログイン後、リポジトリを作成します。`Repositories`タブを選択し、`New`ボタンを押下します。
 
-![GATSBY_EMPTY_ALT](img/2020-12-24-12.png)
+![start-up-04-12.jpg](img/start-up-04-12.jpg)
 
 `Repository name`には好きな名前を付けて良いです。（リポジトリURLの一部になります。）<br>
 アクセス権限は特に理由がなければ`Private`、ポートフォリオなど、第三者に公開したい場合は`Public`に設定し、`Create repository`を押下します。
 
-![GATSBY_EMPTY_ALT](img/2020-12-24-13.png)
+![start-up-04-13.jpg](img/start-up-04-13.jpg)
 
 リポジトリ作成後、リポジトリのページに移動してリポジトリURLをコピーします。`Code`ボタンを押下してメニューを表示し、クリップボードのアイコンを押下するとリポジトリURLが自動でコピーされます。（画像は既に同期済のものになります。）
 
-![GATSBY_EMPTY_ALT](img/2020-12-24-14.png)
+![start-up-04-14.jpg](img/start-up-04-14.jpg)
 
 Visual Studio Codeの操作に戻ります。以下のコマンドを入力してリモートリポジトリのURLを登録します。
 
@@ -182,4 +182,4 @@ Visual Studio Codeの場合構文エラーがあるとファイル名が赤色�
 そしてリモートリポジトリを作成したことにより、GitHubとホスティングサービスを連携させてサイトを公開できるようになります。
 
 次回は**「Netlifyを使ったサイト公開」**編になります。
-　<small>次回：[【スタートアップ編Ⅴ】Netlifyを使ったサイト公開](/2020-12-26/)</small>
+　<small>次回：[【スタートアップ編Ⅴ】Netlifyを使ったサイト公開](/start-up-05/)</small>
