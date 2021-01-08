@@ -48,8 +48,8 @@ const ScrollToTopStyles = css`
   /* PCのみ */
   @media (min-width: 795px) and (min-height: 795px) {
     :hover {
-      transform: scale(1.3);
-      -webkit-transform: scale(1.3);
+      transform: scale(1.2);
+      -webkit-transform: scale(1.2);
     }
   }
 `;
