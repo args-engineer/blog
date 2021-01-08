@@ -69,14 +69,6 @@ const gatsbyConfig: GatsbyConfig = {
             },
           },
           {
-            resolve: `gatsby-remark-images-medium-zoom`,
-            options: {
-              background: 'rgba(197, 210, 217, 0.4)',
-              margin: 100,
-              zIndex: 2000,
-            },
-          },
-          {
             resolve: 'gatsby-remark-external-links',
             options: {
               rel: 'noopener noreferrer',
